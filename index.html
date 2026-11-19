@@ -218,10 +218,13 @@
     .footer-col strong { display: block; margin-bottom: 18px; color: var(--olive-dark); }
     .footer-col a, .footer-col span { display: block; margin: 10px 0; color: var(--muted); font-size: .9rem; }
     .footer-col a:hover { color: var(--olive); }
-    .footer-whatsapp { display: flex !important; align-items: center; gap: 12px; width: fit-content; }
-    .footer-whatsapp svg { width: 36px; height: 36px; flex: 0 0 auto; padding: 8px; border-radius: 50%; background: #25d366; color: #fff; }
-    .footer-whatsapp span { margin: 0; color: var(--ink); font-weight: 700; }
-    .footer-whatsapp small { display: block; margin-top: 3px; color: var(--muted); font-weight: 500; }
+    .footer-contact-links { display: grid; gap: 14px; }
+    .footer-social { display: flex !important; align-items: center; gap: 12px; width: fit-content; margin: 0 !important; }
+    .footer-social svg { width: 36px; height: 36px; flex: 0 0 auto; padding: 8px; border-radius: 50%; color: #fff; }
+    .footer-whatsapp svg { background: #25d366; }
+    .footer-instagram svg { background: linear-gradient(135deg, #833ab4 5%, #fd1d1d 52%, #fcb045 100%); }
+    .footer-social span { margin: 0; color: var(--ink); font-weight: 700; }
+    .footer-social small { display: block; margin-top: 3px; color: var(--muted); font-weight: 500; }
     .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 25px; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
 
     .whatsapp-float { position: fixed; z-index: 80; right: 24px; bottom: 24px; width: 60px; height: 60px; display: grid; place-items: center; border: 3px solid var(--white); border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 12px 30px rgba(20,72,38,.28); transition: transform .25s ease, box-shadow .25s ease; }
@@ -229,6 +232,11 @@
     .whatsapp-float svg { width: 31px; height: 31px; }
     .whatsapp-float .wa-label { position: absolute; right: 72px; width: max-content; padding: 9px 13px; border-radius: 999px; background: var(--olive-dark); color: #fff; font-size: .78rem; font-weight: 700; opacity: 0; visibility: hidden; transform: translateX(7px); transition: .2s ease; }
     .whatsapp-float:hover .wa-label, .whatsapp-float:focus-visible .wa-label { opacity: 1; visibility: visible; transform: none; }
+    .instagram-float { position: fixed; z-index: 80; right: 24px; bottom: 96px; width: 60px; height: 60px; display: grid; place-items: center; border: 3px solid var(--white); border-radius: 50%; background: linear-gradient(135deg, #833ab4 5%, #fd1d1d 52%, #fcb045 100%); color: #fff; box-shadow: 0 12px 30px rgba(93,34,94,.25); transition: transform .25s ease, box-shadow .25s ease; }
+    .instagram-float:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(93,34,94,.34); }
+    .instagram-float svg { width: 30px; height: 30px; }
+    .instagram-float .ig-label { position: absolute; right: 72px; width: max-content; padding: 9px 13px; border-radius: 999px; background: var(--olive-dark); color: #fff; font-size: .78rem; font-weight: 700; opacity: 0; visibility: hidden; transform: translateX(7px); transition: .2s ease; }
+    .instagram-float:hover .ig-label, .instagram-float:focus-visible .ig-label { opacity: 1; visibility: visible; transform: none; }
 
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -291,6 +299,9 @@
       .whatsapp-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
       .whatsapp-float svg { width: 28px; height: 28px; }
       .whatsapp-float .wa-label { display: none; }
+      .instagram-float { right: 16px; bottom: 82px; width: 54px; height: 54px; }
+      .instagram-float svg { width: 27px; height: 27px; }
+      .instagram-float .ig-label { display: none; }
     }
 
     /* Galeri produk */
@@ -623,7 +634,13 @@
       <div class="footer-top">
         <div class="footer-brand"><a class="brand" href="#beranda"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M14 36c0-15 8-25 20-25 11 0 18 9 17 21-1 14-9 22-21 22-10 0-16-7-16-18Z" fill="#FFBD2E"/><path d="M34 13c-2-7 2-11 4-12" stroke="#59642D" stroke-width="4" stroke-linecap="round"/><path d="M35 10c7-6 14-5 18-1-6 5-12 7-18 1Z" fill="#59642D"/></svg></span><span class="brand-name">MALORA</span></a><p>A little taste of happiness—dessert mangga, susu, dan keju untuk setiap momen manis.</p></div>
         <div class="footer-col"><strong>Jelajahi</strong><a href="#tentang">Tentang Kami</a><a href="#menu">Produk</a><a href="#galeri">Galeri</a><a href="#kualitas">Kualitas</a><a href="#faq">FAQ</a></div>
-        <div class="footer-col"><strong>Kontak</strong><a class="footer-whatsapp" href="https://wa.me/6289688149208?text=Halo%20Malora%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener noreferrer" aria-label="Hubungi Malora melalui WhatsApp di nomor +62 896-8814-9208"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3A13 13 0 0 0 5.02 22.97L3.3 29l6.18-1.62A13 13 0 1 0 16 3Zm0 23.64c-2.08 0-4.11-.6-5.85-1.72l-.42-.26-3.67.96.98-3.58-.27-.43A10.62 10.62 0 1 1 16 26.64Zm5.83-7.96c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57a9.52 9.52 0 0 1-1.77-2.2c-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.06 1.3 3.27.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg><span>WhatsApp<small>+62 896-8814-9208</small></span></a></div>
+        <div class="footer-col">
+          <strong>Kontak</strong>
+          <div class="footer-contact-links">
+            <a class="footer-social footer-whatsapp" href="https://wa.me/6289688149208?text=Halo%20Malora%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener noreferrer" aria-label="Hubungi Malora melalui WhatsApp di nomor +62 896-8814-9208"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3A13 13 0 0 0 5.02 22.97L3.3 29l6.18-1.62A13 13 0 1 0 16 3Zm0 23.64c-2.08 0-4.11-.6-5.85-1.72l-.42-.26-3.67.96.98-3.58-.27-.43A10.62 10.62 0 1 1 16 26.64Zm5.83-7.96c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57a9.52 9.52 0 0 1-1.77-2.2c-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.06 1.3 3.27.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg><span>WhatsApp<small>+62 896-8814-9208</small></span></a>
+            <a class="footer-social footer-instagram" href="https://www.instagram.com/_malora.id/" target="_blank" rel="noopener noreferrer" aria-label="Kunjungi Instagram Malora, @ underscore malora titik id"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="currentColor" stroke-width="2.1"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="2.1"/><circle cx="17.4" cy="6.8" r="1.15" fill="currentColor"/></svg><span>Instagram<small>@_malora.id</small></span></a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom"><span>© <span id="year"></span> Malora. All sweetness reserved.</span><span>A Little Taste of Happiness ✦</span></div>
     </div>
@@ -632,6 +649,11 @@
   <a class="whatsapp-float" href="https://wa.me/6289688149208?text=Halo%20Malora%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank" rel="noopener noreferrer" aria-label="Chat Malora melalui WhatsApp">
     <span class="wa-label">Chat WhatsApp</span>
     <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3A13 13 0 0 0 5.02 22.97L3.3 29l6.18-1.62A13 13 0 1 0 16 3Zm0 23.64c-2.08 0-4.11-.6-5.85-1.72l-.42-.26-3.67.96.98-3.58-.27-.43A10.62 10.62 0 1 1 16 26.64Zm5.83-7.96c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.19.21-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57a9.52 9.52 0 0 1-1.77-2.2c-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.71-1.72-.98-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.08-1.11 2.64 0 1.56 1.14 3.06 1.3 3.27.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.14-1.51.26-.74.26-1.38.19-1.51-.08-.13-.29-.21-.61-.37Z"/></svg>
+  </a>
+
+  <a class="instagram-float" href="https://www.instagram.com/_malora.id/" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram Malora, @_malora.id">
+    <span class="ig-label">Instagram @_malora.id</span>
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" stroke="currentColor" stroke-width="2.1"/><circle cx="12" cy="12" r="4.1" stroke="currentColor" stroke-width="2.1"/><circle cx="17.4" cy="6.8" r="1.15" fill="currentColor"/></svg>
   </a>
 
   <script>
